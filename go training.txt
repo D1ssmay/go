@@ -1,0 +1,247 @@
+__________chtenie s konsoli___________
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	var n int
+  fmt.Scanf("%d", &n)
+  fmt.Println(n)
+
+  var str string
+  fmt.Scan(&str)
+  fmt.Println(str)
+}
+
+_________if_________
+
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	var age = 16;
+  if (age < 5 ) {
+    fmt.Println("Vam nado v det sad")
+  } else if ( age == 5) {
+    fmt.Println("Vam nado v dowkolku")
+  } else if ( age >= 18 ) {
+    fmt.Println("Vam nado v universitet")
+  } else {
+    fmt.Println("Vi v", age - 6, "klasse")
+    }
+}
+
+____________switch___________
+
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	var age = 16;
+  switch age{
+    case 5: fmt.Println("Vam 5 let")
+    case 10: fmt.Println("Vam 10 let")
+    case 15: fmt.Println("Vam 15 let")
+    default: fmt.Println("Vam neizvestno skolko let")
+  }
+}
+
+___________for____________
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	for i := 0; i <= 10; i++ {
+    fmt.Println(i)
+  }
+}
+
+____________array____________
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	var arr[3] int
+  arr[0] = 22
+  arr[1] = 24
+  arr[2] = 26
+  fmt.Println(arr[2])
+
+  nums := [4] float64 {4.4, 7.2, 5.9, 9.9}
+  for i, value := range nums {
+    fmt.Println(value, i)
+  }
+}
+
+______________map__________
+
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	characters := make(map[string]float64)
+
+  characters["Syao"] = 4.7
+  characters["Ded"] = 500000000
+
+  for key, value := range characters {
+    fmt.Println("Key:", key, "Value:", value)
+  }
+
+  commits := map[string]int {
+    "kek" : 14,
+    "lol" : 22,
+    "dragon лол" : 123123123131213,
+  }
+
+  for keys, values := range commits {
+    fmt.Println("Key:", keys, "Value:", values)
+  }
+}
+
+____________func___________
+
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	var a = 5
+  var b = 6
+  fmt.Println(summ(a,b))
+  fmt.Println(hz(a,b))
+}
+
+func summ ( num_1 int, num_2 int) int {
+  return num_1 + num_2
+} 
+
+func hz(num_1 int, num_2 int) (int,int) {
+  return num_1 - num_2 , num_1 * num_2
+}
+
+__________zamikaniya___________
+
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	var n int
+  fmt.Scanf("%d", &n)
+
+  multi := func() int {
+    n *= 7
+    return n
+  }
+
+  fmt.Println(multi())
+}
+
+___________defer ( otkladivamie )_____________
+
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	defer fmt.Println("Koneц")
+  fmt.Println("Nachalo")
+  fmt.Println("Prodoljenie")
+  fmt.Println("Ew'e chutok")
+  fmt.Println("Kapel'ky")
+}
+
+_________________ukazatel'___________
+
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	var value int
+  fmt.Scan(&value)
+  fmt.Println(value)
+  pointer(&value)
+  fmt.Println(value)
+}
+
+func pointer ( x *int) {
+  *x = 4
+}
+
+
+___________struct___________
+
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	vergil := Characters{"Vergil", 90, "Motivated", 0.97}
+  fmt.Println(vergil.motivation)
+  vergil.level = 100
+  fmt.Println(vergil.level)
+}
+
+type Characters struct {
+  name string
+  level int
+  motivation string
+  power float64
+}
+
+________func for struct_______
+
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	vergil := Characters{"Vergil", 90, "Motivated", 0.97}
+  fmt.Println(vergil.motivation)
+  vergil.level = 100
+  fmt.Println(vergil.level)
+  fmt.Println(vergil.idk())
+}
+
+type Characters struct {
+  name string
+  level int
+  motivation string
+  power float64
+}
+
+func ( character *Characters) idk() float64 {
+  return float64(character.level) * character.power 
+}
+
