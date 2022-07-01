@@ -245,3 +245,4 @@ func ( character *Characters) idk() float64 {
   return float64(character.level) * character.power 
 }
 
+https://disk.yandex.ru/client/disk/go
